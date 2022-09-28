@@ -1,0 +1,12 @@
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\bin\Debug\lab1.exe.config
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\bin\Debug\lab1.exe
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\bin\Debug\lab1.pdb
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\obj\Debug\lab1.csproj.SuggestedBindingRedirects.cache
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\obj\Debug\lab1.exe
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\obj\Debug\lab1.pdb
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\bin\Debug\EntityFramework.dll
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\bin\Debug\EntityFramework.xml
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\ilayf\OneDrive\Рабочий стол\prog\lectures programming and algorithmization\lab1\lab1\obj\Debug\lab1.csproj.CopyComplete
