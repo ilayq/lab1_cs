@@ -46,6 +46,33 @@ namespace lab1.lab1_task1
             return arr;
         }
 
+        public static int[] qsort(int[] array)
+        {
+            if (array.Length <= 1) { return array; }
+            
+            Random x = new Random();
+            int mid = array[x.Next() % array.Length];
+            int[] lower_equal = {}, upper = {}, temp = {};
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] <= mid)
+                {
+                    temp = lower_equal;
+                    lower_equal = new int[lower_equal.Length + 1];
+                    temp.CopyTo(lower_equal, 0);
+                    lower_equal[lower_equal.Length - 1] = array[i];
+                }
+                else
+                {
+                    temp = upper;
+                    upper = new int[upper.Length + 1];
+                    temp.CopyTo(upper, 0);
+                    upper[upper.Length - 1] = array[i];
+                }
+            }
+            return qsort(lower_equal).Concat(qsort(upper)).ToArray();
+        }
+
         public static int[] system_sort(int[] arr, bool reverse = false)
         {
             if (reverse)

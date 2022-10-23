@@ -55,47 +55,43 @@ namespace lab1.lab1_task2
                         row2 = Console.ReadLine().Split();
                         for (int j = 0; j < columns2; ++j)
                         {
-                            //arr2[i, j] = Convert.ToInt32(row2[j]);
                             if (!(int.TryParse(row2[j], out arr2[i, j]))) { return 0; }
                         }
                     }
                     return task2.main(arr, arr2);
                 case "fl":
-                    using (FileStream file = File.OpenRead("t2_input.txt"))
+                    string[] lines = System.IO.File.ReadAllLines(@"t2_input.txt");
+                    size = lines[0].Split();
+                    columns1 = 0;
+                    if (int.TryParse(size[0], out rows1) && int.TryParse(size[1], out columns1) == false) { return 0; }
+                    arr = new int[rows1, columns1];
+                    for (int i = 1; i <= rows1; i++)
                     {
-                        string[] lines = System.IO.File.ReadAllLines(@"t2_input.txt");
-                        size = lines[0].Split();
-                        columns1 = 0;
-                        if (int.TryParse(size[0], out rows1) && int.TryParse(size[1], out columns1) == false) { return 0; }
-                        arr = new int[rows1, columns1];
-                        for (int i = 1; i <= rows1; i++)
+                        row = lines[i].Split();
+                        for (int j = 0; j < columns1; ++j)
                         {
-                            row = lines[i].Split();
-                            for (int j = 0; j < columns1; ++j)
-                            {
-                                if (int.TryParse(row[j], out arr[i-1, j])) { } else { return 0; }
-                            }
+                            if (int.TryParse(row[j], out arr[i-1, j])) { } else { return 0; }
                         }
-                        task2.print_arr(arr);
-                        size2 = lines[rows1+1].Split();
-                        columns2 = 0;
-                        if (int.TryParse(size2[0], out rows2) && int.TryParse(size2[1], out columns2) == false) { return 0; }
-                        arr2 = new int[rows2, columns2];
-                        for (int i = rows1+2; i <= rows2 + 3; i++)
-                        {
-                            row = lines[i].Split();
-                            for (int j = 0; j < columns2; j++)
-                            {
-                                if (int.TryParse(row[j], out arr2[i - rows1 - 2, j])) { continue; }
-                                else
-                                {
-                                    Console.WriteLine("wrong second matrix");
-                                    return 0;
-                                }
-                            }
-                        }
-                        return task2.main(arr, arr2);
                     }
+                    task2.print_arr(arr);
+                    size2 = lines[rows1+1].Split();
+                    columns2 = 0;
+                    if (int.TryParse(size2[0], out rows2) && int.TryParse(size2[1], out columns2) == false) { return 0; }
+                    arr2 = new int[rows2, columns2];
+                    for (int i = rows1+2; i <= rows2 + 3; i++)
+                    {
+                        row = lines[i].Split();
+                        for (int j = 0; j < columns2; j++)
+                        {
+                            if (int.TryParse(row[j], out arr2[i - rows1 - 2, j])) { continue; }
+                            else
+                            {
+                                Console.WriteLine("wrong second matrix");
+                                return 0;
+                            }
+                        }
+                    }
+                    return task2.main(arr, arr2);
                 default:
                     Console.WriteLine("wrong input type");
                     return 0;

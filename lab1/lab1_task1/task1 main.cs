@@ -26,7 +26,7 @@ namespace lab1.lab1_task1
                     int even_num_count = 0;
                     for (int i = 0; i<arr.Length; ++i)
                     {
-                        Console.Write($"{i} ");
+                        Console.Write($"{arr[i]} ");
                         if (arr[i] < min)
                         {
                             min = arr[i];

@@ -43,43 +43,16 @@ namespace lab1.lab1_task1
                         Task1.main(arr, mode);
                         return 1;
                 case "fl":
-                    using (FileStream file = File.OpenRead("t1_input.txt"))
+                    string[] lines = System.IO.File.ReadAllLines("t1_input.txt");
+                    mode  = lines[0];
+                    if (mode != "a" && mode != "b") { Console.WriteLine("Wrong mode"); return 0; }
+                    arr = new int[lines[1].Split().Length];
+                    int c = 0;
+                    foreach (string i in lines[1].Split())
                     {
-                        byte[] data = new byte[file.Length];
-                        file.Read(data, 0, data.Length);
-                        string[] text = System.Text.Encoding.Default.GetString(data).Split('\n');
-                        for (int i = 0; i < text[0].Length; i++)
-                        {
-                            if (text[0][i] == 'b' || text[0][i] == 'a')
-                            {
-                                mode = Convert.ToString(text[0][i]);
-                            }
-                        }
-                        if (mode.Length == 0) { return 0; }
-                        if (mode == "a" || mode == "b")
-                        {
-                            arr = new int[text[1].Split(' ').Length];
-                            for (int i = 0; i < text[1].Split(' ').Length; i++)
-                            {
-                                if (int.TryParse(text[1].Split(' ')[i], out arr[i]))
-                                {
-
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Wrong number");
-                                    return 0;
-                                }
-                            }
-                            Task1.main(arr, mode);
-                            return 1;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Wrong mode");
-                            return 0;
-                        }
-                    }                       
+                        if (int.TryParse(i, out arr[c])) { c++; } else { Console.WriteLine("Wrong array"); return 0; }
+                    }
+                    return Task1.main(arr, mode);           
                 default:
                     Console.WriteLine("Wrong type of input, try again");
                     return 0;
